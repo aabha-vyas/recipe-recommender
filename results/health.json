@@ -1,0 +1,59 @@
+{
+  "label": "filed under any of: Diabetic, Healthy Recipes, High Fiber, Low Calorie, Low Cholesterol, Low Fat, Low Glycemic Impact, Low Sodium",
+  "input": "normalized ingredients only (words and within-ingredient word pairs)",
+  "n_train": 21267,
+  "n_test": 3754,
+  "test_base_rate": 0.09429941395844432,
+  "C_search_val_avg_precision": {
+    "0.1": 0.30434850740881025,
+    "0.3": 0.31954206152004155,
+    "1.0": 0.31912102727706326,
+    "3.0": 0.30347953951168566,
+    "10.0": 0.27935151164489236
+  },
+  "chosen_C": 0.3,
+  "test": {
+    "keyword heuristic (CS 410)": {
+      "roc_auc": 0.6740320704553006,
+      "avg_precision": 0.18781036026844472
+    },
+    "logistic regression": {
+      "roc_auc": 0.7962396144898637,
+      "avg_precision": 0.3207584211515858
+    }
+  },
+  "most_healthy_terms": [
+    "salt pepper",
+    "banana",
+    "onion",
+    "carrots",
+    "nonfat",
+    "wheat",
+    "sweetener",
+    "cucumber",
+    "apples",
+    "free",
+    "fillets",
+    "chickpeas",
+    "salt",
+    "sugar free",
+    "whole wheat"
+  ],
+  "least_healthy_terms": [
+    "cheese",
+    "butter",
+    "sausage",
+    "cooked",
+    "chocolate",
+    "cream",
+    "beef",
+    "margarine",
+    "mayonnaise",
+    "sauce",
+    "tortillas",
+    "unsalted",
+    "shortening",
+    "unsalted butter",
+    "ice"
+  ]
+}

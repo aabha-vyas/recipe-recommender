@@ -1,0 +1,123 @@
+{
+  "n_recipes": 25021,
+  "n_dev_queries": 1500,
+  "n_test_queries": 3000,
+  "relevance": "shares at least one subcategory with the query recipe",
+  "selected_by_dev": "sentence embeddings, tuned",
+  "selected_vs_course_ndcg@10": {
+    "diff": 0.10655933602781784,
+    "ci95": [
+      0.09795199516971033,
+      0.11538802085071356
+    ]
+  },
+  "results": [
+    {
+      "model": "random",
+      "weights": null,
+      "precision@10": 0.002966666594147682,
+      "ndcg@10": 0.003082132480646474,
+      "mrr": 0.009337169312169312,
+      "hit@10": 0.029333333333333333
+    },
+    {
+      "model": "popularity",
+      "weights": null,
+      "precision@10": 0.026333333924412727,
+      "ndcg@10": 0.027766730978526114,
+      "mrr": 0.05476375661375661,
+      "hit@10": 0.11133333333333334
+    },
+    {
+      "model": "course project (TF-IDF, fixed 0.85/0.15)",
+      "weights": {
+        "course_search": 0.85,
+        "course_steps": 0.15
+      },
+      "dev_ndcg@10": null,
+      "precision@10": 0.34556666016578674,
+      "ndcg@10": 0.3631357828869227,
+      "mrr": 0.5489177248677248,
+      "hit@10": 0.7963333333333333
+    },
+    {
+      "model": "TF-IDF, ingredients only",
+      "weights": {
+        "ing_phrase": 1.0
+      },
+      "dev_ndcg@10": null,
+      "precision@10": 0.14523333311080933,
+      "ndcg@10": 0.16006361407655362,
+      "mrr": 0.326878835978836,
+      "hit@10": 0.583
+    },
+    {
+      "model": "TF-IDF, tuned weights",
+      "weights": {
+        "title": 0.2857,
+        "ing_words": 0.1429,
+        "ing_phrase": 0.0,
+        "steps": 0.5714
+      },
+      "dev_ndcg@10": 0.46511145106154284,
+      "precision@10": 0.430400013923645,
+      "ndcg@10": 0.4519641059098872,
+      "mrr": 0.6392060846560846,
+      "hit@10": 0.8523333333333334
+    },
+    {
+      "model": "TF-IDF, tuned, no title",
+      "weights": {
+        "ing_words": 0.2,
+        "ing_phrase": 0.0,
+        "steps": 0.8
+      },
+      "dev_ndcg@10": 0.36929471950131226,
+      "precision@10": 0.3351333439350128,
+      "ndcg@10": 0.3582609521929503,
+      "mrr": 0.570474470899471,
+      "hit@10": 0.8153333333333334
+    },
+    {
+      "model": "LSA, tuned weights",
+      "weights": {
+        "lsa_title": 0.1667,
+        "lsa_ing": 0.1667,
+        "lsa_steps": 0.6667
+      },
+      "dev_ndcg@10": 0.4086951884684748,
+      "precision@10": 0.3775666654109955,
+      "ndcg@10": 0.3988542010958158,
+      "mrr": 0.5982060846560847,
+      "hit@10": 0.8253333333333334
+    },
+    {
+      "model": "sentence embeddings, tuned",
+      "weights": {
+        "emb_title": 0.4,
+        "emb_ing": 0.2,
+        "emb_steps": 0.4
+      },
+      "dev_ndcg@10": 0.48831591345072517,
+      "precision@10": 0.45026665925979614,
+      "ndcg@10": 0.4696951189147405,
+      "mrr": 0.6488789682539683,
+      "hit@10": 0.8523333333333334
+    },
+    {
+      "model": "hybrid TF-IDF + embeddings, tuned",
+      "weights": {
+        "title": 0.25,
+        "ing_words": 0.0,
+        "steps": 0.25,
+        "emb_ing": 0.25,
+        "emb_steps": 0.25
+      },
+      "dev_ndcg@10": 0.4741512933981834,
+      "precision@10": 0.4408999979496002,
+      "ndcg@10": 0.4603051548413993,
+      "mrr": 0.6403911375661375,
+      "hit@10": 0.853
+    }
+  ]
+}

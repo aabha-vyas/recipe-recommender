@@ -1,0 +1,9 @@
+# Optional: sentence-embedding experiments. torch 2.2.2 is the last release with Intel-Mac wheels
+# and needs numpy < 2.
+numpy==1.26.4
+pandas==3.0.6
+scikit-learn==1.9.1
+scipy==1.17.1
+torch==2.2.2
+transformers==4.45.2
+sentence-transformers==3.2.1
